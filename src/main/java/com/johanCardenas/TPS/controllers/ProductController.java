@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.johanCardenas.TPS.DTO.MostSoldProduct;
+import com.johanCardenas.TPS.models.Order;
 import com.johanCardenas.TPS.models.Product;
 import com.johanCardenas.TPS.services.ProductService;
 
@@ -67,5 +69,9 @@ public class ProductController {
         }else{
             return ResponseEntity.internalServerError().body("No pudo eliminar el registro con id"+ id);
         }        
+    }
+    @GetMapping("/mostSold")
+    public MostSoldProduct getMostSoldProduct() {
+        return productService.getMostSoldProduct();
     }
 }

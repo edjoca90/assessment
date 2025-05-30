@@ -1,5 +1,6 @@
 package com.johanCardenas.TPS.controllers;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -8,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.johanCardenas.TPS.DTO.FrequentClientDTO;
+import com.johanCardenas.TPS.DTO.MostSoldProduct;
 import com.johanCardenas.TPS.models.User;
 import com.johanCardenas.TPS.services.UserService;
 
@@ -45,8 +48,10 @@ public class UserController {
             return  ResponseEntity.ok("Se elimino el registro con id "+ id);
         }else{
             return ResponseEntity.internalServerError().body("No pudo eliminar el usuario con id"+ id);
-        }
-        
+        }        
     }
-    
+    @GetMapping("/frequent")
+    public ArrayList<FrequentClientDTO> getMostSoldProduct() {
+        return userService.getFrecuentClientsTop5();
+    }
 }

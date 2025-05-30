@@ -7,9 +7,9 @@ import java.util.List;
 import jakarta.persistence.*;
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "orders")
-@Data
 public class Order {
 
     @Id
@@ -19,15 +19,15 @@ public class Order {
     private LocalDateTime orderDate;
     @Column(nullable=false)
     private int units;
-    @Column(nullable=true) 
-    private Double discountApplied;
+    @Column(nullable=false) 
+    private int discountApplied = 0;
     @Column(nullable=true) 
     private boolean randomOrder = false; // para descuento del 50%
  
-    @Column(nullable=true) 
+    @Column(nullable=false) 
     private int userId;
 
-   @Column(nullable=true) 
+   @Column(nullable=false) 
     private int productId;
 
 } 

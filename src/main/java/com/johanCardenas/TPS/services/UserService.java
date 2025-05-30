@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.johanCardenas.TPS.DTO.FrequentClientDTO;
+import com.johanCardenas.TPS.DTO.MostSoldProduct;
 import com.johanCardenas.TPS.models.User;
 import com.johanCardenas.TPS.repositories.UserRepository;
 
@@ -39,4 +41,10 @@ public class UserService {
             return false;
         }
     }    
+
+    public  ArrayList<FrequentClientDTO> getFrecuentClientsTop5() {
+        ArrayList<FrequentClientDTO> list = userRepository.getFrecuentClientsTop5();
+        if (list.isEmpty()) return null;
+        else return list;
+    }
 }

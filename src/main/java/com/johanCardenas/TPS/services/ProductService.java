@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.johanCardenas.TPS.DTO.MostSoldProduct;
 import com.johanCardenas.TPS.models.Product;
 import com.johanCardenas.TPS.repositories.ProductRepository;
 
@@ -25,9 +26,9 @@ public class ProductService {
     }
     public Product getProductById(Integer productId) {
         return productRepository.findById(productId)
-                .orElseThrow(() -> 
-                    new EntityNotFoundException("Producto no encontrado")
-                    );
+        .orElseThrow(() -> 
+        new EntityNotFoundException("Producto no encontrado")
+        );
     }
     public ArrayList<Product> getProductsByCategory(String category) {
         return (ArrayList<Product>)productRepository.findByCategory(category);
@@ -44,4 +45,9 @@ public class ProductService {
             return false;
         }
     }   
+    public MostSoldProduct getMostSoldProduct() {
+        ArrayList<MostSoldProduct> list = productRepository.getMostSoldProduct();
+        if (list.isEmpty()) return null;
+        return list.get(0);
+    }
 }
