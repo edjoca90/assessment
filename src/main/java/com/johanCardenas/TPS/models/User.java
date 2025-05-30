@@ -25,12 +25,9 @@ public class User {
     @Column(nullable=false, length=100)
     private Boolean isFrequent = false; // usado para descuento del 5%
 
-    @OneToMany(mappedBy = "user")
-    private List<Order> orders;
+    
     public enum Role {
     ADMIN, CUSTOMER
 }
-    public boolean isFrequent() {
-    return isFrequent;
-}
+   
 }

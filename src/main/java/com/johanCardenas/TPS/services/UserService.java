@@ -10,15 +10,15 @@ import com.johanCardenas.TPS.models.User;
 import com.johanCardenas.TPS.repositories.UserRepository;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 
 @Service
 public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-
-    public User createUser(User user) {
-        
+     @Transactional
+    public User createUser(User user) {        
         return userRepository.save(user);
     }
     public ArrayList<User> getAllUsers() {
@@ -30,9 +30,18 @@ public class UserService {
                     new EntityNotFoundException("Usuario no encontrado")
                     );
     }
-    // public void deleteUser(Integer userId) {
-    //     userRepository.deleteById(userId);
-    // }
+     @Transactional
+    public boolean deleteUser(Integer userId) {
+        try {
+            userRepository.deleteById(userId);
+            return true;
+        }catch(Exception err){
+            return false;
+        }
+    
+        
+
+    }
 
     // public boolean isFrequentCustomer(Integer userId) {
     //     return getUserById(userId).isFrequent();
