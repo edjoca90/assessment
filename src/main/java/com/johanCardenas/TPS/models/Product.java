@@ -23,7 +23,7 @@ public class Product {
     private Double price;
     @Column(nullable=true) 
     private boolean active = true;
-    @Column(nullable=false)
+    @Column(nullable=true)
     private int stock;
    
 

@@ -38,25 +38,5 @@ public class UserService {
         }catch(Exception err){
             return false;
         }
-    
-        
-
-    }
-
-    // public boolean isFrequentCustomer(Integer userId) {
-    //     return getUserById(userId).isFrequent();
-    // }
-
-    // public User findByEmail(String email) {
-    //     return userRepository.findByEmail(email).orElseThrow(() -> 
-    //                 new EntityNotFoundException("Usuario no encontrado")
-    //                 );
-    // }
-
-    // public User findByUsername(String username) {
-    //     return userRepository.findByUserName(username)
-    //             .orElseThrow(() -> 
-    //                 new EntityNotFoundException("Usuario no encontrado")
-    //                 );
-    // }
+    }    
 }

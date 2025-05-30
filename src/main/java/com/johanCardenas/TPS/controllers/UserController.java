@@ -44,7 +44,7 @@ public class UserController {
         if(ok){
             return  ResponseEntity.ok("Se elimino el registro con id "+ id);
         }else{
-            return ResponseEntity.internalServerError().body("No pudo eliminar el modulo con id"+ id);
+            return ResponseEntity.internalServerError().body("No pudo eliminar el usuario con id"+ id);
         }
         
     }

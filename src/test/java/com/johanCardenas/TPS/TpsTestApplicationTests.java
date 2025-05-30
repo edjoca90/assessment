@@ -1,4 +1,4 @@
-package com.johanCardenas.tps_test;
+package com.johanCardenas.TPS;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

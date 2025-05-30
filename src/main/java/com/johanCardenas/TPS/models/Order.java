@@ -15,22 +15,20 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
-    @Column(nullable=false) 
+    @Column(nullable=true) 
     private LocalDateTime orderDate;
     @Column(nullable=false)
     private int units;
-    @Column(nullable=false) 
+    @Column(nullable=true) 
     private Double discountApplied;
     @Column(nullable=true) 
     private boolean randomOrder = false; // para descuento del 50%
+ 
+    @Column(nullable=true) 
+    private int userId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+   @Column(nullable=true) 
+    private int productId;
 
 } 
 
