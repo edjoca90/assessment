@@ -1,0 +1,19 @@
+spring:
+  jackson:
+      serialization:
+        write-dates-as-timestamps: false
+  datasource:
+    url: jdbc:mysql://75.102.20.2:3306/centrilabcolombi_prueba?useSSL=false
+    username: centrilabcolombi_teradmin
+    password: 9*^@7?JuYewq
+    driver-class-name: com.mysql.cj.jdbc.Driver
+ 
+    hikari:
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      max-lifetime: 60000
+      leak-detection-threshold: 30000  
+server:
+  port: 8080
+  servlet:
+    context-path: /
