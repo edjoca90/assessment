@@ -37,7 +37,7 @@ public class OrderService {
     } 
     public void apllyDisccount(Order order){
         //isFrequent al iniciar sesion debe ejecutar pr que evalue si está en el top5 y le ponga ToF a frequent
-        order.getProductId();
+        //order.getProductId();
         //time
         //isRandomOrder
         

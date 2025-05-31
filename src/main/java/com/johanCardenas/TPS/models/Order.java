@@ -19,8 +19,8 @@ public class Order {
     private LocalDateTime orderDate;
     @Column(nullable=false)
     private int units;
-    @Column(nullable=false) 
-    private int discountApplied = 0;
+    @Column(nullable=true) 
+    private int discountApplied ;
     @Column(nullable=true) 
     private boolean randomOrder = false; // para descuento del 50%
  
